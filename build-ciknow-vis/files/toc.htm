@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+  <head>
+    <meta name="generator" content="HelpNDoc Freeware Edition">
+    <link rel="StyleSheet" href="toc.css" type="text/css"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="jquery.treeview.min.js"></script>
+    <script type="text/javascript" src="jquery.rich-array-hnd.js"></script>
+    <script type="text/javascript" src="searchdata.js"></script>
+    <script type="text/javascript"><!--
+      $(document).ready(function(){
+        $("#toc").treeview(
+        {collapsed: true}
+        )
+        $("#keywords").treeview({collapsed: true});
+        $(document.body).click(function(e){var $target = $(e.target); if($target.is("a")) return; hidePopup();});
+        $(function(){var tabContainers = $("div.tabs > div");tabContainers.hide().filter(":first").show();$("div.tabs ul.tabNavigation a").click(function(){tabContainers.hide();
+        tabContainers.filter(this.hash).show();$("div.tabs ul.tabNavigation a").removeClass("selected");$(this).addClass("selected");return false;}).filter(":first").click();});
+      });
+      function hidePopup() {if($("#popupMenu")) $("#popupMenu").remove();}
+      function showPopup(oSender,aLinks){hidePopup();if (aLinks==0) return true;var oParentDiv=document.createElement("DIV");oParentDiv.id="popupMenu";var oLink,oBr=null;
+      for (var nCnt=0;nCnt<aLinks.length;nCnt++){oLink=document.createElement("A");oLink.innerHTML=aLinks[nCnt][0];oLink.href=aLinks[nCnt][1];oLink.target="FrameMain";oLink.onclick=hidePopup;
+      oParentDiv.appendChild(oLink);if (nCnt<aLinks.length-1){oBr=document.createElement("BR");oParentDiv.appendChild(oBr);}}document.body.appendChild(oParentDiv);var pos=$(oSender).offset(); 
+      var height=$(oSender).height();$(oParentDiv).css({"backgroundColor": "#EEEEEE","border": "1px solid #999999","position": "absolute","left": (pos.left+20)+"px","top": (pos.top+height+5)+"px",
+      "padding": 5+"px"});$(oParentDiv).show();return false;}
+      function performSearch(){sValue = $("#search_value").val().toLowerCase();var aValues = sValue.split(" ");var aFinalResults = [];for (var nValue = 0; nValue < aValues.length; nValue++){if (aValues[nValue] == "") continue;var aResults = oSearchData[aValues[nValue]];if (aResults && aResults.length > 0){if (nValue == 0) aFinalResults = aResults
+else aFinalResults = jQuery.richArray.intersect(aFinalResults, aResults);}else{aFinalResults = [];break;}}if (aFinalResults.length > 0){$("#search_results").html("Found " + aFinalResults.length + " results");for (var nCnt = 0; nCnt < aFinalResults.length; nCnt++){var oElmt = document.createElement("DIV");oElmt.innerHTML = "<a href='" + aFinalResults[nCnt][0] + "?search=" + sValue + "' target='FrameMain'>" + aFinalResults[nCnt][1] + "</a> (" + aFinalResults[nCnt][2] + ")<br/>";$(oElmt).appendTo($("#search_results"));}}else{$("#search_results").html("No result found");}}
+    //--></script>
+    <style type="text/css">
+      ul.tabNavigation{list-style: none;margin: 0;padding: 10px;}ul.tabNavigation li{display: inline;}ul.tabNavigation li A{padding: 3px 5px;background-color: #ccc;color: #000;
+      text-decoration: none;}ul.tabNavigation li A.selected,ul.tabNavigation li A:hover{background-color: #333;color: #fff;}ul.tabNavigation li A:focus{outline: 0;}
+      </style>
+  </head>
+
+  <body>
+  
+    <div class="tabs">
+      <ul class="tabNavigation">
+        <li><a href="#tab_toc">Contents</a></li>
+        <li><a href="#tab_keywords">Index</a></li>
+        <li><a href="#tab_search">Search</a></li>
+      </ul>
+      <div id="tab_toc">
+        <ul id="toc" class="filetree">
+          
+          <li>
+            <a href="Introduction.html" class="folder" target="FrameMain">Welcome to Visualizer</a>
+            <ul>
+              
+              <li>
+                <a href="Welcome.html" class="file" target="FrameMain">Features</a>
+              </li>
+              
+              <li>
+                <a href="License.html" class="file" target="FrameMain">License</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="GettingStarted.html" class="folder" target="FrameMain">Getting Started</a>
+            <ul>
+              
+              <li>
+                <a href="Systemrequirements.html" class="file" target="FrameMain">System requirements</a>
+              </li>
+              
+              <li>
+                <a href="Gettinghelp.html" class="file" target="FrameMain">Getting help</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="CIKNOWVisualizerInterface.html" class="folder" target="FrameMain">Visualizer Interface</a>
+            <ul>
+              
+              <li>
+                <a href="OpenSaveNetwork.html" class="folder" target="FrameMain">Open/Save Network</a>
+                <ul>
+                  
+                  <li>
+                    <a href="ForOnlineVisualizer.html" class="folder" target="FrameMain">For Online Visualizer</a>
+                    <ul>
+                      
+                      <li>
+                        <a href="SaveGraph.html" class="file" target="FrameMain">Save Graph</a>
+                      </li>
+                    </ul>
+                  </li>
+                  
+                  <li>
+                    <a href="ForStandaloneVisualizer.html" class="folder" target="FrameMain">For Standalone Visualizer</a>
+                    <ul>
+                      
+                      <li>
+                        <a href="OpenGraphFile.html" class="file" target="FrameMain">Open Graph File</a>
+                      </li>
+                      
+                      <li>
+                        <a href="SaveGraphData.html" class="file" target="FrameMain">Save Graph Data</a>
+                      </li>
+                      
+                      <li>
+                        <a href="SaveGraphImage.html" class="file" target="FrameMain">Save Graph Image</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="Layout.html" class="folder" target="FrameMain">Layout</a>
+                <ul>
+                  
+                  <li>
+                    <a href="PutNodesinCircle.html" class="file" target="FrameMain">Put Nodes in Circle</a>
+                  </li>
+                  
+                  <li>
+                    <a href="RandomlyScatterNodes.html" class="file" target="FrameMain">Randomly Scatter Nodes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="AutomaticallyClusterNetwork.html" class="file" target="FrameMain">Automatically Cluster Network</a>
+                  </li>
+                  
+                  <li>
+                    <a href="PutNodesinaRadialTree.html" class="file" target="FrameMain">Put Nodes in a Radial Tree</a>
+                  </li>
+                  
+                  <li>
+                    <a href="GroupNodesbyAttribute.html" class="file" target="FrameMain">Group Nodes by Attribute</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="EditNetwork.html" class="folder" target="FrameMain">Edit Network</a>
+                <ul>
+                  
+                  <li>
+                    <a href="HideSelectedNodes.html" class="file" target="FrameMain">Hide Selected Nodes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ShowSelectedNodes.html" class="file" target="FrameMain">Show Selected Nodes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="HideIsolatedNodes.html" class="file" target="FrameMain">Hide Isolated Node(s)</a>
+                  </li>
+                  
+                  <li>
+                    <a href="HideShowSelectedNodeTypeAttrib.html" class="file" target="FrameMain">Hide/Show Selected Node Type/Attribute</a>
+                  </li>
+                  
+                  <li>
+                    <a href="HideShowSelectedEdgeType.html" class="file" target="FrameMain">Hide/Show Selected Edge Type</a>
+                  </li>
+                  
+                  <li>
+                    <a href="LimitEdgeStrengths.html" class="file" target="FrameMain">Limit Edge Strengths</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ShowAllNodesandEdges.html" class="file" target="FrameMain">Show All Nodes and Edges</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ResettotheSavedNetwork.html" class="file" target="FrameMain">Reset to the Saved Network</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="DisplayOptions.html" class="folder" target="FrameMain">Display Options</a>
+                <ul>
+                  
+                  <li>
+                    <a href="FitGraphtoScreen.html" class="file" target="FrameMain">Fit Graph to Screen</a>
+                  </li>
+                  
+                  <li>
+                    <a href="MinimizeNodes.html" class="file" target="FrameMain">Minimize Nodes</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ShowNodeImage.html" class="file" target="FrameMain">Show Node Image</a>
+                  </li>
+                  
+                  <li>
+                    <a href="NodeShapeByNodeTypeAttribute.html" class="file" target="FrameMain">Node Shape By NodeType/Attribute</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ResizeNodeByNodeTypeAttribute.html" class="file" target="FrameMain">Resize Node By NodeType/Attribute</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ShowHideLabel.html" class="file" target="FrameMain">Show/Hide Label</a>
+                  </li>
+                  
+                  <li>
+                    <a href="NodeDepth.html" class="file" target="FrameMain">Node Depth</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ShowEdgeStrengths.html" class="file" target="FrameMain">Show Edge Strengths</a>
+                  </li>
+                  
+                  <li>
+                    <a href="EdgethicknessbyWeight.html" class="file" target="FrameMain">Edge thickness by Weight</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="View.html" class="folder" target="FrameMain">View</a>
+                <ul>
+                  
+                  <li>
+                    <a href="ZoomtoaSelection.html" class="file" target="FrameMain">Zoom to a Selection</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ZoominonEdges.html" class="file" target="FrameMain">Zoom in on Edges</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ZoomoutonEdges.html" class="file" target="FrameMain">Zoom out on Edges</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ZoominonGraph.html" class="file" target="FrameMain">Zoom in on Graph</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ZoomoutonGraph.html" class="file" target="FrameMain">Zoom out on Graph</a>
+                  </li>
+                  
+                  <li>
+                    <a href="MoveGraph.html" class="file" target="FrameMain">Move Graph</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="OtherFunctions.html" class="folder" target="FrameMain">Other Functions</a>
+                <ul>
+                  
+                  <li>
+                    <a href="SearchforaNode.html" class="file" target="FrameMain">Search for a Node</a>
+                  </li>
+                  
+                  <li>
+                    <a href="NodeFilteringbyDepth.html" class="file" target="FrameMain">Node Filtering by Depth</a>
+                  </li>
+                  
+                  <li>
+                    <a href="FilterRelationTyp.html" class="file" target="FrameMain">Filter Relation Type</a>
+                  </li>
+                  
+                  <li>
+                    <a href="ChangeColor.html" class="file" target="FrameMain">Change Color</a>
+                  </li>
+                  
+                  <li>
+                    <a href="NodeSelectionandDeselection.html" class="file" target="FrameMain">Node Selection and Deselection</a>
+                  </li>
+                  
+                  <li>
+                    <a href="HideEdge.html" class="file" target="FrameMain">Hide Edge</a>
+                  </li>
+                  
+                  <li>
+                    <a href="NodeProfiles.html" class="file" target="FrameMain">Node Profiles</a>
+                  </li>
+                  
+                  <li>
+                    <a href="EdgeProfiles.html" class="file" target="FrameMain">Edge Profiles</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li>
+                <a href="Recommendation.html" class="folder" target="FrameMain">Recommendation</a>
+                <ul>
+                  
+                  <li>
+                    <a href="RecommendationBasedonNodeType.html" class="file" target="FrameMain">Recommendation Based on Node Type</a>
+                  </li>
+                  
+                  <li>
+                    <a href="RecommendationBasedonAttribute.html" class="file" target="FrameMain">Recommendation Based on Attribute</a>
+                  </li>
+                  
+                  <li>
+                    <a href="RecommendationDescription.html" class="file" target="FrameMain">Recommendation Description</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="Appendix.html" class="folder" target="FrameMain">Appendix</a>
+            <ul>
+              
+              <li>
+                <a href="Troubleshooting.html" class="file" target="FrameMain">Troubleshooting</a>
+              </li>
+              
+              <li>
+                <a href="Worksheet.html" class="file" target="FrameMain">Worksheet</a>
+              </li>
+              
+              <li>
+                <a href="QuestionTypeGuide.html" class="file" target="FrameMain">Question Type Guide</a>
+              </li>
+            </li>
+        </ul>
+      </div>
+      
+      <div id="tab_keywords">
+        <ul id="keywords" class="filetree">
+        </ul>
+      </div>
+      <div id="tab_search" style="padding:10px">
+        Search: <form onsubmit="performSearch(); return false;"><input id="search_value"></input><input type="submit" value="search"/></form><div id="search_results"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
